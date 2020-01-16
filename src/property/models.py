@@ -16,3 +16,25 @@ class Property(models.Model):
     beds_number = models.PositiveIntegerField()
     bath_number = models.PositiveIntegerField()
     garages_number = models.PositiveIntegerField()
+    image = models.ImageField(upload_to='property/',null=True)
+    category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Property'
+        verbose_name_plural = 'Properties'
+    
+
+# Category Model
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
