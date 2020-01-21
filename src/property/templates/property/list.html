@@ -37,7 +37,7 @@
               <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a>
             </div>
             <div class="probootstrap-card-text">
-              <h2 class="probootstrap-card-heading"><a href="#">{{property}}</a></h2>
+              <h2 class="probootstrap-card-heading"><a href={% url 'property:property_detail' id=property.id %}>{{property}}</a></h2>
               <div class="probootstrap-listing-location">
                 <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
               </div>
@@ -48,19 +48,19 @@
               <ul>
                 <li>
                   Area
-                  <span>2400 m2</span>
+                  <span>{{property.area}} m2</span>
                 </li>
                 <li>
                   Beds
-                  <span>3</span>
+                  <span>{{property.beds_number}}</span>
                 </li>
                 <li>
                   Baths
-                  <span>2</span>
+                  <span>{{property.bath_number}}</span>
                 </li>
                 <li>
                   Garages
-                  <span>1</span>
+                  <span>{{property.garages_number}}</span>
                 </li>
               </ul>
             </div>
