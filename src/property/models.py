@@ -9,7 +9,7 @@ property_type =(
 
 class Property(models.Model):
     name = models.CharField(max_length=50)
-    #location
+    location = models.CharField(max_length=50, null=True)
     property_type = models.CharField(choices=property_type,max_length=10)
     price = models.PositiveIntegerField()
     area = models.DecimalField(decimal_places=2, max_digits=5)
@@ -21,6 +21,7 @@ class Property(models.Model):
 
     def __str__(self):
         return self.name
+    
 
     class Meta:
         verbose_name = 'Property'
@@ -31,6 +32,7 @@ class Property(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='category/',null=True)
 
     def __str__(self):
         return self.category_name
