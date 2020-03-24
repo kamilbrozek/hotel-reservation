@@ -128,3 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 src/media
+haus
+.vscode
+src/db.sqlite3
+src/*/migrations
